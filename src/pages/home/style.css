@@ -1,0 +1,61 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.grid-item {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.sec {
+  background: #f8f8f8;
+  padding-left: 10px;
+}
+.appBar {
+  position: absolute;
+  background: #f0f2f5;
+  width: 100%;
+}
+.appUpper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.icon {
+  color: #54656f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  margin: 0 20px 0 10px;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.icon:hover {
+  color: #4f5f69;
+}
+.allUser {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 33.3%;
+  height: 100vh;
+  overflow: auto;
+  transition: 0.5s ease;
+  /* background: gray; */
+}
+.allUserHeader {
+  height: 15vh;
+  background: #008069;
+  display: flex;
+  color: white;
+  /* align-self: flex-end; */
+}
+.user-li {
+  padding-left: 20px;
+  margin: 30px;
+  border-bottom: 1px solid gray;
+  cursor: pointer;
+}
