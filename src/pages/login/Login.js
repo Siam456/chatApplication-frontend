@@ -36,49 +36,51 @@ export default function Login() {
     checkLogin();
   };
   return (
-    <>
-      <div className="container" id="container">
+    <div className="login-registration-wrapper">
+      <div className="container-main" id="container">
         <div>
           <SignUp />
         </div>
         <div className="form-container sign-in-container">
-          <form onSubmit={submitHandler}>
-            <h1>Sign in</h1>
+          <form className="loginForm" onSubmit={submitHandler}>
+            <h1 className="title">Sign in</h1>
 
             <span>
               <br></br>
             </span>
             <input
+              className="form-controll"
               type="text"
               name="email"
               onChange={handleChange}
               placeholder="Username"
             />
             <input
+              className="form-controll"
               type="password"
               name="password"
               onChange={handleChange}
               placeholder="Password"
             />
-            <p>Forgot your password?</p>
+            <p className="sub-title">Forgot your password?</p>
             <p
               id="error"
               style={{
                 color: "red",
               }}
             ></p>
-            <button>Sign In</button>
+            <button className="submit-btn">Sign In</button>
           </form>
         </div>
         <div className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
-              <p>
+              <h1 className="title">Welcome Back!</h1>
+              <p className="sub-title">
                 To keep connected with us please login with your personal info
               </p>
               <button
-                className="ghost"
+                className="submit-btn ghost"
                 id="signIn"
                 onClick={() => {
                   const container = document.getElementById("container");
@@ -89,10 +91,12 @@ export default function Login() {
               </button>
             </div>
             <div className="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
+              <h1 className="title">Hello, Friend!</h1>
+              <p className="sub-title">
+                Enter your personal details and start journey with us
+              </p>
               <button
-                className="ghost"
+                className="submit-btn ghost"
                 id="signUp"
                 onClick={() => {
                   const container = document.getElementById("container");
@@ -105,6 +109,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

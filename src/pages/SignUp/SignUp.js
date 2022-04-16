@@ -55,12 +55,13 @@ export default function SignUp() {
   };
   return (
     <div className="form-container sign-up-container">
-      <form onSubmit={submitHandler}>
+      <form className="loginForm" onSubmit={submitHandler}>
         <h1>Create Account</h1>
         <span>
           <br></br>
         </span>
         <input
+          className="form-controll"
           id="name"
           name="name"
           onChange={handleChange}
@@ -69,6 +70,7 @@ export default function SignUp() {
         />
         <span id="error-name" className="error-msg"></span>
         <input
+          className="form-controll"
           id="email"
           type="email"
           onChange={handleChange}
@@ -77,6 +79,7 @@ export default function SignUp() {
         />
         <span id="error-email" className="error-msg"></span>
         <input
+          className="form-controll"
           id="phone"
           type="text"
           onChange={handleChange}
@@ -85,6 +88,7 @@ export default function SignUp() {
         />
         <span id="error-phone" className="error-msg"></span>
         <input
+          className="form-controll"
           id="password"
           type="password"
           onChange={handleChange}
@@ -92,7 +96,7 @@ export default function SignUp() {
           placeholder="Password"
         />
         <span id="error-password" className="error-msg"></span> <br></br>
-        <button>Sign Up</button>
+        <button className="submit-btn">Sign Up</button>
       </form>
     </div>
   );
