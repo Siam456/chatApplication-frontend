@@ -7,7 +7,7 @@ export default function Homepage() {
 
   const logout = () => {
     // Cookies.remove("siams app");
-    Cookies.remove("chatApp");
+    Cookies.remove("chatApp", { path: "/" });
     setAuth(false);
   };
   return (

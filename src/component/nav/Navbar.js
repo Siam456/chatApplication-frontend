@@ -3,6 +3,8 @@ import Login from "../../pages/login/Login";
 import Cookies from "js-cookie";
 import Homepage from "../../pages/home/Homepage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Test from "../test/Test";
+import NotFound from "../test/NotFound";
 
 export const Auth = createContext({});
 
@@ -21,8 +23,12 @@ export default function Navbar() {
     <Auth.Provider value={[auth, setAuth]}>
       <BrowserRouter>
         <Routes>
+          <Route path="*" element={<NotFound />} />
           {auth ? (
-            <Route path="/" element={<Homepage />} />
+            <>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/test" element={<Test />} />
+            </>
           ) : (
             <Route path="/" element={<Login />} />
           )}

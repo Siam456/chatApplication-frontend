@@ -238,4 +238,11 @@ footer {
   z-index: 999;
 }
 
-
+.error-msg {
+  text-align: left;
+  color: red;
+  width: 100%;
+}
+.ei-error {
+  border: 1px solid red;
+}

@@ -27,6 +27,7 @@ export default function Login() {
         setAuth(true);
       }
     } catch (err) {
+      document.getElementById("error").textContent = "Login failed...";
       console.log(err);
     }
   };
@@ -60,6 +61,12 @@ export default function Login() {
               placeholder="Password"
             />
             <p>Forgot your password?</p>
+            <p
+              id="error"
+              style={{
+                color: "red",
+              }}
+            ></p>
             <button>Sign In</button>
           </form>
         </div>
