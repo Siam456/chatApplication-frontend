@@ -61,7 +61,7 @@ export default function SignUp() {
           <br></br>
         </span>
         <input
-          className="form-controll"
+          className="form-controll-custom"
           id="name"
           name="name"
           onChange={handleChange}
@@ -70,7 +70,7 @@ export default function SignUp() {
         />
         <span id="error-name" className="error-msg"></span>
         <input
-          className="form-controll"
+          className="form-controll-custom"
           id="email"
           type="email"
           onChange={handleChange}
@@ -79,7 +79,7 @@ export default function SignUp() {
         />
         <span id="error-email" className="error-msg"></span>
         <input
-          className="form-controll"
+          className="form-controll-custom"
           id="phone"
           type="text"
           onChange={handleChange}
@@ -88,7 +88,7 @@ export default function SignUp() {
         />
         <span id="error-phone" className="error-msg"></span>
         <input
-          className="form-controll"
+          className="form-controll-custom"
           id="password"
           type="password"
           onChange={handleChange}

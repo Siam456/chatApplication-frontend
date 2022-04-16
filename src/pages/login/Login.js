@@ -49,14 +49,14 @@ export default function Login() {
               <br></br>
             </span>
             <input
-              className="form-controll"
+              className="form-controll-custom"
               type="text"
               name="email"
               onChange={handleChange}
               placeholder="Username"
             />
             <input
-              className="form-controll"
+              className="form-controll-custom"
               type="password"
               name="password"
               onChange={handleChange}
