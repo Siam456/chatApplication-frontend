@@ -1,9 +1,11 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import SignUp from "../SignUp/SignUp";
 import "./style.css";
+import { Auth } from "../../component/nav/Navbar";
 
 export default function Login() {
+  const [auth, setAuth] = useContext(Auth);
   const [loginInfo, setLoginInfo] = useState({
     email: "",
     password: "",
@@ -16,11 +18,13 @@ export default function Login() {
       [name]: value,
     }));
   };
+
   const checkLogin = async () => {
     try {
       const response = await axios.post("/login", loginInfo);
       if (response) {
         console.log(response);
+        setAuth(true);
       }
     } catch (err) {
       console.log(err);
