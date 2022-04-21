@@ -1,9 +1,16 @@
 import React from "react";
-import UserListMap from "./UserListMap";
+import ProfileInfo from "./ProfileInfo";
+import "./style.css";
 
-export default function UserList({ fetchConversationFlag, setFetchConversationFlag }) {
+export default function Profile() {
   return (
-    <div id="allUserList" className="allUser">
+    <div
+      id="profile"
+      className="allUser"
+      style={{
+        background: "#F0F2F5",
+      }}
+    >
       <div className="allUserHeader">
         <p
           style={{
@@ -13,7 +20,7 @@ export default function UserList({ fetchConversationFlag, setFetchConversationFl
             cursor: "pointer",
           }}
           onClick={() => {
-            document.getElementById("allUserList").style.left = "-50%";
+            document.getElementById("profile").style.left = "-50%";
           }}
         >
           <img
@@ -27,10 +34,10 @@ export default function UserList({ fetchConversationFlag, setFetchConversationFl
             margin: "20px",
           }}
         >
-          New Chat
+          Profile
         </p>
       </div>
-      <UserListMap fetchConversationFlag={fetchConversationFlag} setFetchConversationFlag={setFetchConversationFlag} />
+      <ProfileInfo />
     </div>
   );
 }

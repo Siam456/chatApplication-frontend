@@ -1,16 +1,24 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Cookies from "js-cookie";
 import { Auth } from "../../component/nav/Navbar";
 import "./style.css";
 import UserList from "../../component/userlist/UserList";
+import Conversation from "../../component/conversation/Conversation";
+import Profile from "../../component/profile/Profile";
 
 export default function Homepage() {
   let [auth, setAuth] = useContext(Auth);
+  const [fetchConversationFlag, setFetchConversationFlag] = useState(false);
 
   const logout = () => {
     // Cookies.remove("siams app");
     Cookies.remove("chatApp", { path: "/" });
     setAuth(false);
+  };
+
+  //open profile modal
+  const openProfile = () => {
+    document.getElementById("profile").style.left = 0;
   };
   return (
     <div>
@@ -22,7 +30,9 @@ export default function Homepage() {
                 <div
                   style={{
                     margin: "10px",
+                    cursor: "pointer",
                   }}
+                  onClick={() => openProfile()}
                 >
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt-F5GQg8qB2fWquF1ltQvAT2Z8Dv5pJLb9w&usqp=CAU"
@@ -35,7 +45,7 @@ export default function Homepage() {
                 </div>
                 <div
                   style={{
-                    margin: "10px",
+                    margin: "20px",
                     display: "flex",
                     justifyContent: "center",
                     alignContent: "center",
@@ -50,16 +60,20 @@ export default function Homepage() {
                     ></i>
                   </span>
                   <span className="icon">
-                    <i className="fa-solid fa-ellipsis-vertical"></i>
+                    <i className="fa-solid fa-power-off" onClick={logout}></i>
                   </span>
                 </div>
               </div>
             </div>
           </div>
+          <div>
+            <Conversation fetchConversationFlag={fetchConversationFlag} />
+          </div>
         </div>
         <div className="grid-item sec">sxasdedss</div>
       </div>
-      <UserList />
+      <UserList fetchConversationFlag={fetchConversationFlag} setFetchConversationFlag={setFetchConversationFlag} />
+      <Profile />
     </div>
   );
 }

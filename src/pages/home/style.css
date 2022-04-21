@@ -12,7 +12,7 @@
   padding-left: 10px;
 }
 .appBar {
-  position: absolute;
+  /* position: absolute; */
   background: #f0f2f5;
   width: 100%;
 }
@@ -34,7 +34,7 @@
   cursor: pointer;
 }
 .icon:hover {
-  color: #4f5f69;
+  color: #447595;
 }
 .allUser {
   position: absolute;
@@ -44,7 +44,7 @@
   height: 100vh;
   overflow: auto;
   transition: 0.5s ease;
-  /* background: gray; */
+  background: white;
 }
 .allUserHeader {
   height: 15vh;
@@ -54,8 +54,11 @@
   /* align-self: flex-end; */
 }
 .user-li {
-  padding-left: 20px;
-  margin: 30px;
-  border-bottom: 1px solid gray;
+  padding: 20px 50px;
+  transition: 0.5s ease;
+  border-bottom: 1px solid rgb(228, 223, 223);
   cursor: pointer;
+}
+.user-li:hover {
+  background: #65add7;
 }
